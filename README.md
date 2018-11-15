@@ -9,9 +9,10 @@ The project was bootstrapped with [Create React App](https://github.com/facebook
 
 - yarn (I am using 1.10.1)
 - Node 8.10.0 or later (I am using v10.11.0)
+- You will also need use a command line to issue the commands below.
 
 ## Installing Dependencies
-
+- Open your command line
 - Navigate into the root project folder
 - Type in the following command to install all dependencies:
 
@@ -20,7 +21,7 @@ yarn install
 ```
 
 ## Run Project
-
+- Open your command line
 - Navigate into the root project folder
 - To run the app in development mode, use the command
 
@@ -32,7 +33,7 @@ yarn start
 - The page will automatically reload if you make changes to the code. You will see the build errors and lint warnings in the console.
 
 ## Run tests
-
+- Open your command line
 - Navigate into the root project folder
 - To run the project tests, use the command
 
