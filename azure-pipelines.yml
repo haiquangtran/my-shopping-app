@@ -5,6 +5,7 @@
 
 trigger:
 - master
+- develop
 
 pool:
   vmImage: 'Ubuntu-16.04'
@@ -19,3 +20,12 @@ steps:
     yarn install
     yarn build
   displayName: 'yarn install and build'
+
+- script: yarn test:ci
+  displayName: 'yarn test:ci - generate test results in xml file and coverage'
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: '**/test-results.xml'
