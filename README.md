@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/rxphaiquangtran/my-shopping-app/_apis/build/status/haiquangtran.my-shopping-app?branchName=master)](https://dev.azure.com/rxphaiquangtran/my-shopping-app/_build/latest?definitionId=1&branchName=master)
+
 # My Shopping App
 
 This shopping app provides a list of products (mobile phones) that can be added to the shopping cart or removed from the shopping cart.
