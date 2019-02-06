@@ -2,7 +2,10 @@
 
 # My Shopping App
 
-This shopping app provides a list of products (mobile phones) that can be added to the shopping cart or removed from the shopping cart.
+You can see the site here: https://my-shopping-app.azurewebsites.net/.
+This shopping app provides a list of products (mobile phones) that can be added to the shopping cart or removed from the shopping cart. It is fully responsive and adheres to WCAG 2.2 AA rating. 
+
+
 
 The project is built using the main technologies: React (16.5.2), Redux (4.0.1), and Bootstrap (4.1.3).
 The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) to learn more visit https://github.com/facebook/create-react-app.
