@@ -1,12 +1,13 @@
 [![Build Status](https://dev.azure.com/rxphaiquangtran/my-shopping-app/_apis/build/status/haiquangtran.my-shopping-app?branchName=master)](https://dev.azure.com/rxphaiquangtran/my-shopping-app/_build/latest?definitionId=1&branchName=master)
 
 [![Build Status](https://vsrm.dev.azure.com/rxphaiquangtran/_apis/public/Release/badge/b6314c35-bf87-40d2-b185-c2a3aa2a9878/4/4
-)](https://vsrm.dev.azure.com/rxphaiquangtran/_apis/public/Release/badge/b6314c35-bf87-40d2-b185-c2a3aa2a9878/4/4
+)](https://dev.azure.com/rxphaiquangtran/my-shopping-app/_release?definitionId=4
 )
+
+URL: https://my-shopping-app.azurewebsites.net/.
 
 # My Shopping App
 
-You can see the site here: https://my-shopping-app.azurewebsites.net/.
 This shopping app provides a list of products (mobile phones) that can be added to the shopping cart or removed from the shopping cart. It is fully responsive and adheres to WCAG 2.2 AA rating. 
 
 
