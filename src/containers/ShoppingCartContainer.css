@@ -1,6 +1,7 @@
 .shopping-cart {
-  border: 1px solid gray;
+  border: 1px solid #CECECE;
   border-radius: 4px;
   padding: 10px;
   margin: 8px;
+  background-color: #E2E2E2;
 }
