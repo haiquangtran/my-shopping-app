@@ -1,15 +1,19 @@
+.card .product-add-to-cart-btn {
+  border: none;
+  background: #008a00;
+}
+
+.card .product-add-to-cart-btn:hover {
+  background: #006800;
+}
+
+.card.product-card {
+  background-color: #F5F5F5;
+}
+
 img.product-image {
   max-width: 130px;
   height: auto;
   margin: auto;
   display: block;
-}
-
-.product-add-to-cart-btn {
-  border: none !important;
-  background: #008a00 !important;
-}
-
-.product-add-to-cart-btn:hover {
-  background: #006800 !important;
 }
