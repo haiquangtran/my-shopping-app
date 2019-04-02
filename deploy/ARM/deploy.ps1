@@ -75,7 +75,7 @@ Write-Host "Selecting subscription '$subscriptionId'";
 Select-AzureRmSubscription -SubscriptionID $subscriptionId;
 
 # Register RPs
-$resourceProviders = @("microsoft.web");
+$resourceProviders = @("microsoft.web","microsoft.insights");
 if($resourceProviders.length) {
     Write-Host "Registering resource providers"
     foreach($resourceProvider in $resourceProviders) {

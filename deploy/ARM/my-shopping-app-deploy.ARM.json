@@ -1,39 +1,88 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "serverfarms_my_shopping_app_dev_asp_name": {
-      "defaultValue": "my-shopping-app-dev-asp",
-      "type": "String"
-    }
-  },
-  "variables": {},
   "resources": [
     {
-      "type": "Microsoft.Web/serverfarms",
-      "sku": {
-        "name": "F1",
-        "tier": "Free",
-        "size": "F1",
-        "family": "F",
-        "capacity": 0
-      },
-      "kind": "app",
-      "name": "[parameters('serverfarms_my_shopping_app_dev_asp_name')]",
-      "apiVersion": "2016-09-01",
-      "location": "Australia East",
-      "scale": null,
+      "name": "[parameters('name')]",
+      "type": "Microsoft.Web/sites",
       "properties": {
-        "name": "[parameters('serverfarms_my_shopping_app_dev_asp_name')]",
-        "workerTierName": null,
-        "adminSiteName": null,
-        "hostingEnvironmentProfile": null,
-        "perSiteScaling": false,
-        "reserved": false,
-        "targetWorkerCount": 0,
-        "targetWorkerSizeId": 0
+        "siteConfig": {
+          "appSettings": [
+            {
+              "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+              "value": "[reference('microsoft.insights/components/my-shopping-app-dev-ai', '2015-05-01').InstrumentationKey]"
+            },
+            {
+              "name": "ApplicationInsightsAgent_EXTENSION_VERSION",
+              "value": "~2"
+            },
+            {
+              "name": "XDT_MicrosoftApplicationInsights_Mode",
+              "value": "default"
+            },
+            {
+              "name": "DiagnosticServices_EXTENSION_VERSION",
+              "value": "disabled"
+            },
+            {
+              "name": "APPINSIGHTS_PROFILERFEATURE_VERSION",
+              "value": "disabled"
+            },
+            {
+              "name": "APPINSIGHTS_SNAPSHOTFEATURE_VERSION",
+              "value": "disabled"
+            },
+            {
+              "name": "InstrumentationEngine_EXTENSION_VERSION",
+              "value": "disabled"
+            },
+            {
+              "name": "SnapshotDebugger_EXTENSION_VERSION",
+              "value": "disabled"
+            },
+            {
+              "name": "XDT_MicrosoftApplicationInsights_BaseExtensions",
+              "value": "disabled"
+            }
+          ]
+        },
+        "name": "[parameters('name')]",
+        "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
+        "hostingEnvironment": "[parameters('hostingEnvironment')]"
       },
-      "dependsOn": []
+      "dependsOn": ["microsoft.insights/components/my-shopping-app-dev-ai"],
+      "apiVersion": "2016-03-01",
+      "location": "[parameters('location')]"
+    },
+    {
+      "apiVersion": "2015-05-01",
+      "name": "my-shopping-app-dev-ai",
+      "type": "microsoft.insights/components",
+      "location": "australiaeast",
+      "properties": {
+        "ApplicationId": "[parameters('name')]",
+        "Request_Source": "IbizaWebAppExtensionCreate"
+      }
     }
-  ]
+  ],
+  "parameters": {
+    "name": {
+      "type": "string"
+    },
+    "hostingPlanName": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "hostingEnvironment": {
+      "type": "string"
+    },
+    "serverFarmResourceGroup": {
+      "type": "string"
+    },
+    "subscriptionId": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0"
 }
