@@ -1,4 +1,26 @@
 {
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "type": "string"
+    },
+    "hostingPlanName": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "hostingEnvironment": {
+      "type": "string"
+    },
+    "serverFarmResourceGroup": {
+      "type": "string"
+    },
+    "subscriptionId": {
+      "type": "string"
+    }
+  },
   "resources": [
     {
       "name": "[parameters('name')]",
@@ -46,7 +68,8 @@
         },
         "name": "[parameters('name')]",
         "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
-        "hostingEnvironment": "[parameters('hostingEnvironment')]"
+        "hostingEnvironment": "[parameters('hostingEnvironment')]",
+        "httpsOnly": true
       },
       "dependsOn": ["microsoft.insights/components/my-shopping-app-dev-ai"],
       "apiVersion": "2016-03-01",
@@ -62,27 +85,5 @@
         "Request_Source": "IbizaWebAppExtensionCreate"
       }
     }
-  ],
-  "parameters": {
-    "name": {
-      "type": "string"
-    },
-    "hostingPlanName": {
-      "type": "string"
-    },
-    "location": {
-      "type": "string"
-    },
-    "hostingEnvironment": {
-      "type": "string"
-    },
-    "serverFarmResourceGroup": {
-      "type": "string"
-    },
-    "subscriptionId": {
-      "type": "string"
-    }
-  },
-  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0"
+  ]
 }
