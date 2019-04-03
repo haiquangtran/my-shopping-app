@@ -4,7 +4,7 @@
 )](https://dev.azure.com/rxphaiquangtran/my-shopping-app/_release?definitionId=4
 )
 
-URL: https://my-shopping-app.azurewebsites.net/.
+URL: https://my-shopping-app-dev.azurewebsites.net/
 
 # My Shopping App
 
