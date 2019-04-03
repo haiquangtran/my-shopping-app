@@ -3,22 +3,39 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "NOT_SET",
+      "metadata": {
+        "description": "App name"
+      }
     },
     "hostingPlanName": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "NOT_SET",
+      "metadata": {
+        "description": "App Service Plan name"
+      }
     },
     "location": {
-      "type": "string"
-    },
-    "hostingEnvironment": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "NOT_SET",
+      "metadata": {
+        "description": "App Service Plan location"
+      }
     },
     "serverFarmResourceGroup": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "NOT_SET",
+      "metadata": {
+        "description": "App Service Plan resource group"
+      }
     },
     "subscriptionId": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "NOT_SET",
+      "metadata": {
+        "description": "App Service subscription"
+      }
     }
   },
   "resources": [
@@ -68,7 +85,7 @@
         },
         "name": "[parameters('name')]",
         "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
-        "hostingEnvironment": "[parameters('hostingEnvironment')]",
+        "hostingEnvironment": "",
         "httpsOnly": true
       },
       "dependsOn": ["microsoft.insights/components/my-shopping-app-dev-ai"],
