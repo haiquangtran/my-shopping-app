@@ -5,7 +5,7 @@ import ShoppingCartList from './ShoppingCartList';
 const setup = children => {
   const component = shallow(<ShoppingCartList {...children} />);
   return {
-    component: component
+    component: component,
   };
 };
 

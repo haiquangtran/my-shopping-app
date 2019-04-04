@@ -1,0 +1,21 @@
+.card {
+  &.product-card {
+    background-color: #f5f5f5;
+  }
+
+  .product-add-to-cart-btn {
+    border: none;
+    background: #008a00;
+
+    &:hover {
+      background: #006800;
+    }
+  }
+
+  img.product-image {
+    max-width: 130px;
+    height: auto;
+    margin: auto;
+    display: block;
+  }
+}
