@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'reactstrap';
-import './ShoppingCartProductDisplay.css';
+import './ShoppingCartProductDisplay.scss';
 
 const ShoppingCartProductDisplay = ({ product, removeProductFromCart }) => (
   <div className="shopping-cart-product" tabIndex="-1">

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ShoppingCartProductDisplay from '../components/ShoppingCartProductDisplay';
 import ShoppingCartList from '../components/ShoppingCartList';
 import { removeProductFromCart } from '../actions/';
-import './ShoppingCartContainer.css';
+import './ShoppingCartContainer.scss';
 
 export class ShoppingCartContainer extends Component {
   render() {

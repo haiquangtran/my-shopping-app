@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProductsContainer from './ProductsContainer';
 import ShoppingCartContainer from './ShoppingCartContainer';
 import { Container, Row, Col } from 'reactstrap';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   render() {
